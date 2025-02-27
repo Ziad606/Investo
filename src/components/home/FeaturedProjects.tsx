@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Filter, ArrowUpDown } from "lucide-react";
 import ProjectCard from "../projects/ProjectCard";
+import { Link } from "react-router-dom";
 
 interface Project {
   id: string;
@@ -274,9 +275,11 @@ const FeaturedProjects = ({
 
         {/* View All Projects Button */}
         <div className="text-center mt-10">
-          <Button size="lg" className="px-8">
-            View All Projects
-          </Button>
+          <Link to="/projects">
+            <Button size="lg" className="px-8">
+              View All Projects
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

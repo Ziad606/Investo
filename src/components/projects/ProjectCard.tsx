@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -10,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 interface ProjectCardProps {
+  id?: string;
   title?: string;
   businessName?: string;
   description?: string;
@@ -20,6 +22,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({
+  id = "1",
   title = "Eco-Friendly Urban Farm Initiative",
   businessName = "Green City Ventures",
   description = "A sustainable urban farming project that aims to provide fresh produce to local communities while reducing carbon footprint.",
@@ -76,9 +79,11 @@ const ProjectCard = ({
       </CardContent>
 
       <CardFooter className="border-t pt-3">
-        <button className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-md text-sm font-medium transition-colors">
-          View Project
-        </button>
+        <Link to={`/project/${id}`} className="w-full">
+          <button className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-md text-sm font-medium transition-colors">
+            View Project
+          </button>
+        </Link>
       </CardFooter>
     </Card>
   );
